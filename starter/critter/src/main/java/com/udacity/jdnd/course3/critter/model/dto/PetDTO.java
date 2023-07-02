@@ -1,4 +1,6 @@
-package com.udacity.jdnd.course3.critter.pet;
+package com.udacity.jdnd.course3.critter.model.dto;
+
+import com.udacity.jdnd.course3.critter.model.entity.PetType;
 
 import java.time.LocalDate;
 
