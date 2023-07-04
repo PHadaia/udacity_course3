@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class PetService {
-    private PetRepository petRepository;
+    private final PetRepository petRepository;
 
     public PetService(PetRepository petRepository) {
         this.petRepository = petRepository;

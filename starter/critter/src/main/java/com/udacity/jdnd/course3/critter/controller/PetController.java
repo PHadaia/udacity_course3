@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/pet")
 public class PetController {
-    private PetService petService;
+    private final PetService petService;
 
     public PetController(PetService petService) {
         this.petService = petService;
