@@ -11,8 +11,10 @@ public class Employee {
     private Long id;
     private String name;
     @ElementCollection
+    @Enumerated(EnumType.STRING)
     private Set<EmployeeSkill> skills;
     @ElementCollection
+    @Enumerated(EnumType.STRING)
     private Set<DayOfWeek> daysAvailable;
 
     public Employee() {
