@@ -1,8 +1,6 @@
 package com.udacity.jdnd.course3.critter.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.util.Set;
 
@@ -12,8 +10,10 @@ public class Employee {
     @GeneratedValue
     private Long id;
     private String name;
-//    private Set<EmployeeSkill> skills;
-//    private Set<DayOfWeek> daysAvailable;
+    @ElementCollection
+    private Set<EmployeeSkill> skills;
+    @ElementCollection
+    private Set<DayOfWeek> daysAvailable;
 
     public Employee() {
 
@@ -22,8 +22,8 @@ public class Employee {
     public Employee(Long id, String name, Set<EmployeeSkill> skills, Set<DayOfWeek> daysAvailable) {
         this.id = id;
         this.name = name;
-//        this.skills = skills;
-//        this.daysAvailable = daysAvailable;
+        this.skills = skills;
+        this.daysAvailable = daysAvailable;
     }
 
     public Long getId() {
@@ -42,19 +42,19 @@ public class Employee {
         this.name = name;
     }
 
-//    public Set<EmployeeSkill> getSkills() {
-//        return skills;
-//    }
-//
-//    public void setSkills(Set<EmployeeSkill> skills) {
-//        this.skills = skills;
-//    }
-//
-//    public Set<DayOfWeek> getDaysAvailable() {
-//        return daysAvailable;
-//    }
-//
-//    public void setDaysAvailable(Set<DayOfWeek> daysAvailable) {
-//        this.daysAvailable = daysAvailable;
-//    }
+    public Set<EmployeeSkill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Set<EmployeeSkill> skills) {
+        this.skills = skills;
+    }
+
+    public Set<DayOfWeek> getDaysAvailable() {
+        return daysAvailable;
+    }
+
+    public void setDaysAvailable(Set<DayOfWeek> daysAvailable) {
+        this.daysAvailable = daysAvailable;
+    }
 }

@@ -1,5 +1,6 @@
 package com.udacity.jdnd.course3.critter.model.entity;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +12,8 @@ public class EmployeeRequest {
     @Id
     @GeneratedValue
     private Long id;
-//    private Set<EmployeeSkill> skills;
+    @ElementCollection
+    private Set<EmployeeSkill> skills;
     private LocalDate date;
 
     public EmployeeRequest() {
@@ -19,7 +21,7 @@ public class EmployeeRequest {
 
     public EmployeeRequest(Long id, Set<EmployeeSkill> skills, LocalDate date) {
         this.id = id;
-//        this.skills = skills;
+        this.skills = skills;
         this.date = date;
     }
 
@@ -31,13 +33,13 @@ public class EmployeeRequest {
         this.id = id;
     }
 
-//    public Set<EmployeeSkill> getSkills() {
-//        return skills;
-//    }
+    public Set<EmployeeSkill> getSkills() {
+        return skills;
+    }
 
-//    public void setSkills(Set<EmployeeSkill> skills) {
-//        this.skills = skills;
-//    }
+    public void setSkills(Set<EmployeeSkill> skills) {
+        this.skills = skills;
+    }
 
     public LocalDate getDate() {
         return date;

@@ -14,7 +14,6 @@ public class Customer {
     private String name;
     private String phoneNumber;
     private String notes;
-
     @OneToMany
     private List<Pet> pets;
 
