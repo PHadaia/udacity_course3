@@ -18,10 +18,10 @@ import java.util.stream.StreamSupport;
 
 @Service
 public class ScheduleService {
-    ScheduleRepository scheduleRepository;
-    EmployeeRepository employeeRepository;
-    PetRepository petRepository;
-    CustomerRepository customerRepository;
+    private final ScheduleRepository scheduleRepository;
+    private final EmployeeRepository employeeRepository;
+    private final PetRepository petRepository;
+    private final CustomerRepository customerRepository;
 
     public ScheduleService(
             ScheduleRepository scheduleRepository,
