@@ -90,10 +90,10 @@ public class ScheduleService {
     }
 
     private List<Employee> getEmployeeListFromIdList(List<Long> employeeIds) {
-        return employeeIds.stream().map(id -> employeeRepository.findById(id)).filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
+        return employeeIds.stream().map(employeeRepository::findById).filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
     }
 
     private List<Pet> getPetListFromIdLIst(List<Long> petIds) {
-        return petIds.stream().map(id -> petRepository.findById(id)).filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
+        return petIds.stream().map(petRepository::findById).filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
     }
 }
