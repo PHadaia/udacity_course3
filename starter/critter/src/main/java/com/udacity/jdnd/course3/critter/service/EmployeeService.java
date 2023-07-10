@@ -47,11 +47,11 @@ public class EmployeeService {
     }
 
     public List<EmployeeDTO> findEmployeesForService(EmployeeRequestDTO employeeRequestDTO) {
-        return employeeRepository.findEmployeesByDaysAvailableAndSkills(
-                        Set.of(employeeRequestDTO.getDate().getDayOfWeek()),
-                        employeeRequestDTO.getSkills()
+        return employeeRepository.findAllByDaysAvailable(
+                        employeeRequestDTO.getDate().getDayOfWeek()
                 )
                 .stream()
+                .filter(employee -> employee.getSkills().containsAll(employeeRequestDTO.getSkills()))
                 .map(this::createEmployeeDTOFromEmployee)
                 .collect(Collectors.toList());
     }
