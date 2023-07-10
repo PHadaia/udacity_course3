@@ -1,9 +1,6 @@
 package com.udacity.jdnd.course3.critter.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,7 +11,7 @@ public class Customer {
     private String name;
     private String phoneNumber;
     private String notes;
-    @OneToMany
+    @OneToMany(mappedBy = "owner", fetch=FetchType.EAGER)
     private List<Pet> pets;
 
     public Customer() {
